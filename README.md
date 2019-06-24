@@ -4,3 +4,6 @@
 ## Requirements
 * Python 3
 * Pytest 3.10.0
+* Selenium webdriver 3
+    * selenium chromedriver
+    * geckodriver
