@@ -30,28 +30,10 @@ def test_guest_can_add_product_to_cart(browser, link):
     product_page.check_add_item_to_basket()
 
 
-def test_guest_cant_see_success_message_after_adding_product_to_cart(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/"
-    page = MainPage(browser, link)
-    page.open()
-    product_page = ProductPage(browser, browser.current_url)
-    product_page.add_item_to_bascket()
-    product_page.should_not_be_success_message()
-
-
 def test_guest_cant_see_success_message(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = MainPage(browser, link)
     page.open()
     product_page = ProductPage(browser, browser.current_url)
     product_page.should_not_be_success_message()
-
-
-def test_message_dissapeared_after_adding_product_to_cart(browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
-    page = MainPage(browser, link)
-    page.open()
-    product_page = ProductPage(browser, browser.current_url)
-    product_page.add_item_to_bascket()
-    product_page.should_be_success_message()
 
