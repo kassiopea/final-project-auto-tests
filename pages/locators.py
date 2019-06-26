@@ -16,9 +16,14 @@ class ProductPageLocators(object):
 
 class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini a.btn-default")
 
 
 class LoginPageLocators(object):
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+
+
+class CardPageLocators(object):
+    BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
+    MESSAGE_IN_BASKET = (By.CSS_SELECTOR, "#content_inner")
