@@ -4,29 +4,6 @@ from .pages.card_page import CardPage
 import pytest
 import time
 
-testdata = [
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"
-]
-
-#test for check link with bug
-@pytest.mark.parametrize('link', testdata)
-def test_guest_can_add_product_to_cart(browser, link):
-    page = ProductPage(browser, link)
-    page.open()
-    product_page = ProductPage(browser, browser.current_url)
-    product_page.add_item_to_bascket()
-    product_page.solve_quiz_and_get_code()
-    product_page.check_add_item_to_basket()
-
 
 @pytest.mark.need_review
 def test_guest_can_add_product_to_cart(browser):
