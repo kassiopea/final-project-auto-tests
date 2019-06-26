@@ -22,7 +22,7 @@ testdata = [
 def test_guest_can_add_product_to_cart(browser, link):
     # link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
     # link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
-    page = MainPage(browser, link)
+    page = ProductPage(browser, link)
     page.open()
     product_page = ProductPage(browser, browser.current_url)
     product_page.add_item_to_bascket()
@@ -32,7 +32,7 @@ def test_guest_can_add_product_to_cart(browser, link):
 
 def test_guest_cant_see_success_message(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
-    page = MainPage(browser, link)
+    page = ProductPage(browser, link)
     page.open()
     product_page = ProductPage(browser, browser.current_url)
     product_page.should_not_be_success_message()
